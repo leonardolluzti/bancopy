@@ -1,0 +1,15 @@
+-- sqlite3 banco.db
+CREATE TABLE cliente(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    nome VARCHAR(200) NOT NULL, 
+    cpf VARCHAR(15) NOT NULL, 
+    email VARCHAR(200) NOT NULL);
+
+CREATE TABLE conta(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    agencia INT NOT NULL, 
+    numero VARCHAR(9) UNIQUE NOT NULL, 
+    tipo VARCHAR(1) NOT NULL, 
+    saldo FLOAT NOT NULL,
+    idCliente INTEGER NOT NULL,
+    FOREIGN KEY (idCliente) REFERENCES cliente(id));
