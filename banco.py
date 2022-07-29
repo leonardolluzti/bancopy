@@ -103,6 +103,7 @@ class BancoDB:
             print("Saldo atual R$ %s" % self.data)   
         else:
             print("Valor informado não é válido!")
+            
     def transferir(self, agencia, conta2, tipo, valor):
         print("Transferência realizada com sucesso!")
         print("Dados da transferência:")
@@ -116,6 +117,7 @@ class BancoDB:
             print("Tipo : 3 - Conta Salário")
         else: 
             print("Tipo de conta não encontrado")
+        print("Valor da Transferência: R$ " + valor)
 
     def fechar(self):
         self.cursor.close()
